@@ -7,7 +7,7 @@ const Leaderboard = () => {
     <div className="container leaderboard">
       <div className="header">Leaderboard</div>
       <table cellSpacing="0" cellPadding="0">
-        {leaderboards.map((leaderboard, index) => (
+        {leaderboards.slice(0, 50).map((leaderboard, index) => (
           <tr key={index}>
             <td>
               <div className="circle">#{index + 1}</div>

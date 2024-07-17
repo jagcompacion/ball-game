@@ -19,7 +19,7 @@ const Result = ({ result }) => {
   };
 
   const handleStartAgain = () => {
-    navigate("/game");
+    navigate("/");
   };
 
   return (

@@ -11,7 +11,6 @@ const Result = ({ result }) => {
   };
 
   const handleContinue = () => {
-    if (!name) return;
     const leaderboards = JSON.parse(localStorage.getItem("leaderboards")) || [];
     leaderboards.push({ name, result });
     localStorage.setItem("leaderboards", JSON.stringify(leaderboards));
@@ -41,7 +40,9 @@ const Result = ({ result }) => {
         />
         <div className="button-container">
           <button onClick={handleStartAgain}>Start again</button>
-          <button onClick={handleContinue}>Continue to Leaderboard</button>
+          <button disabled={!name} onClick={handleContinue}>
+            Continue to Leaderboard
+          </button>
         </div>
       </div>
     </div>
